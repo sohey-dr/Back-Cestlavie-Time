@@ -31,7 +31,7 @@ class RecipesController < ApplicationController
 
   def update
     @recipe.update(recipe_params)
-    render json: { message: '"Recipe successfully updated!"', recipe: @recipe }
+    render json: { message: "Recipe successfully updated!", recipe: @recipe }
   end
 
   private
