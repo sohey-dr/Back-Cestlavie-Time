@@ -1,0 +1,10 @@
+create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC", comment: "レシピ管理用テーブル" do |t|
+     t.string "title", null: false, :limit => 100, comment: "name of recipe"
+     t.string "making_time", null: false, :limit => 100, comment: "単位用カラム"
+     t.string "serves", null: false, :limit => 100, comment: "どのぐらいの重さで単価を表示するか"
+     t.string "ingredients", null: false, :limit => 300, comment: "ancestry使用カラム"
+     t.integer "cost", null: false, comment: "カテゴリ階層を表すカラム"
+     t.datetime "discarded_at"
+     t.datetime "created_at", null: false
+     t.datetime "updated_at", null: false
+end
