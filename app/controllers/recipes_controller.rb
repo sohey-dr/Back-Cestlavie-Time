@@ -13,9 +13,8 @@ class RecipesController < ApplicationController
 
   def create
     recipe = Recipe.new(recipe_params)
-    p recipe_params
 
-    if recipe.save
+    if !recipe_params.empty? && recipe.save
       render json: { message: "Recipe successfully created!" , recipe: recipe }
     else
       render json: { message: "Recipe creation failed!", required: "title, making_time, serves, ingredients, cost" }
