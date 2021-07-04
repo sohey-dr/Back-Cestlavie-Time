@@ -12,8 +12,11 @@ class RecipesController < ApplicationController
   end
 
   def create
-    recipe = Recipe.create(params.permit(:title, :making_time, :serves, :ingredients, :cost))
-    if recipe.save
+    if recipe_params.empty?
+      render json: { message: "Recipe creation failed!", required: "title, making_time, serves, ingredients, cost" }
+    end
+
+    if Recipe.new(recipe_params).crete
       render json: { message: "Recipe successfully created!" , recipe: recipe }
     else
       render json: { message: "Recipe creation failed!", required: "title, making_time, serves, ingredients, cost" }
