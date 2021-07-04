@@ -8,7 +8,7 @@ class RecipesController < ApplicationController
   end
 
   def show
-    render json: { message: '"Recipe details by id"', recipe: @recipe }
+    render json: { message: "Recipe details by id", recipe: @recipe }
   end
 
   def create
