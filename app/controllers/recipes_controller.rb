@@ -1,5 +1,5 @@
 class RecipesController < ApplicationController
-  protect_from_forgery
+  skip_before_action :verify_authenticity_token
   before_action :set_recipe, only: [:show, :update, :destroy]
 
   def index
@@ -15,9 +15,8 @@ class RecipesController < ApplicationController
     recipe = Recipe.new(recipe_params)
     if recipe.save
       render json: { message: "Recipe successfully created!" ,recipe: recipe }
-      p 1
     else
-      render json: { message: "Recipe successfully created!", required: "title, making_time, serves, ingredients, cost" }
+      render json: { message: "Recipe creation failed!", required: "title, making_time, serves, ingredients, cost" }
     end
   end
 
