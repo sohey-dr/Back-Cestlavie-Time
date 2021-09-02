@@ -1,0 +1,10 @@
+ja:
+  enums:
+    live:
+      live_type:
+        welcome: "新歓ライブ"
+        freshman_debut: "デビューライブ"
+        summer: "夏ライブ"
+        admin_change: "幹部交代ライブ"
+        christmas: "クリスマスライブ"
+        graduation: "卒業ライブ"
