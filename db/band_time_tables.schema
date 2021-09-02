@@ -1,0 +1,6 @@
+create_table "band_time_tables", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC", comment: "bandsテーブルとtime_tablesテーブルの中間テーブル" do |t|
+     t.integer "band_id"
+     t.integer "time_table_id"
+     t.datetime "created_at", null: false
+     t.datetime "updated_at", null: false
+end

@@ -1,3 +1,4 @@
 require 'lives.schema'
 require 'time_tables.schema'
 require 'bands.schema'
+require 'band_time_tables.schema'
