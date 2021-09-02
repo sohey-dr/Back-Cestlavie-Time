@@ -1,4 +1,5 @@
 class Live < ApplicationRecord
+  has_many :time_tables, dependent: :destroy
   enum live_type: {
     welcome: 0,
     freshman_debut: 1,
