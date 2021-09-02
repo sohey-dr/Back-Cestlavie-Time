@@ -13,7 +13,7 @@ services:
     ports:
       - "3306:3306"
     volumes:
-      - rails-railway-stations-volume:/var/lib/mysql
+      - cestlavie-time-volume:/var/lib/mysql
       - ./init:/docker-entrypoint-initdb.d
 
   web:
@@ -30,5 +30,5 @@ services:
       - db
 
 volumes:
-  rails-railway-stations-volume:
+  cestlavie-time-volume:
   bundle:

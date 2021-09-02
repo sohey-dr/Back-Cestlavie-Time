@@ -1,4 +1,4 @@
-class RecipesController < ApplicationController
+class SamplesController < ApplicationController
   skip_before_action :verify_authenticity_token
   before_action :set_recipe, only: [:show, :update, :destroy]
 
