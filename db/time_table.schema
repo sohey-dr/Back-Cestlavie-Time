@@ -1,0 +1,7 @@
+create_table "time_tables", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC", comment: "ライブのタイムテーブルを管理する用のテーブル" do |t|
+     t.integer "live_id", comment: "livesテーブルの外部キー"
+     t.time "start_time", null: false, comment: "タイムテーブルごとの開始時間カラム"
+     t.time "end_time", null: false, comment: "タイムテーブルごとの終了時間カラム"
+     t.datetime "created_at", null: false
+     t.datetime "updated_at", null: false
+end

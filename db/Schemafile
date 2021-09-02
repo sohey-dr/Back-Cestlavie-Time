@@ -1,1 +1,2 @@
 require 'lives.schema'
+require 'time_table.schema'

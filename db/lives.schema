@@ -1,5 +1,5 @@
 create_table "lives", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC", comment: "ライブを管理する用のテーブル" do |t|
-     t.integer "live_type", null: false, comment: "ライブの種類用からむ"
+     t.integer "live_type", null: false, comment: "ライブの種類用カラム"
      t.date "date", null: false, comment: "ライブの日程用カラム"
      t.datetime "created_at", null: false
      t.datetime "updated_at", null: false
