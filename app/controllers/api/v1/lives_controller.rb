@@ -1,47 +1,47 @@
 module Api
   module V1
     class LivesController < ApplicationController
-      before_action :set_post, only: [:show, :update, :destroy]
+      before_action :set_live, only: [:show, :update, :destroy]
 
       def index
-        posts = Post.order(created_at: :desc)
-        render json: { status: "SUCCESS", message: "Loaded posts", data: posts }
+        lives = Live.order(created_at: :desc)
+        render json: { status: "SUCCESS", message: "Loaded lives", data: lives }
       end
 
       def show
-        render json: { status: "SUCCESS", message: "Loaded the post", data: @post }
+        render json: { status: "SUCCESS", message: "Loaded the live", data: @live }
       end
 
       def create
-        post = Post.new(post_params)
-        if post.save
-          render json: { status: "SUCCESS", data: post }
+        live = Live.new(live_params)
+        if live.save
+          render json: { status: "SUCCESS", data: live }
         else
-          render json: { status: "ERROR", data: post.errors }
+          render json: { status: "ERROR", data: live.errors }
         end
       end
 
       def destroy
-        @post.destroy
-        render json: { status: "SUCCESS", message: "Deleted the post", data: @post }
+        @live.destroy
+        render json: { status: "SUCCESS", message: "Deleted the live", data: @live }
       end
 
       def update
-        if @post.update(post_params)
-          render json: { status: "SUCCESS", message: "Updated the post", data: @post }
+        if @live.update(live_params)
+          render json: { status: "SUCCESS", message: "Updated the live", data: @live }
         else
-          render json: { status: "SUCCESS", message: "Not updated", data: @post.errors }
+          render json: { status: "SUCCESS", message: "Not updated", data: @live.errors }
         end
       end
 
       private
 
-      def set_post
-        @post = Post.find(params[:id])
+      def set_live
+        @live = Live.find(params[:id])
       end
 
-      def post_params
-        params.require(:post).permit(:title)
+      def live_params
+        params.require(:live).permit(:title)
       end
     end
   end
