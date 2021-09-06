@@ -4,8 +4,8 @@ module Api
       before_action :set_live, only: [:show, :update, :destroy]
 
       def index
-        lives = Live.order(created_at: :desc)
-        render json: { status: "SUCCESS", message: "Loaded lives", data: lives }
+        lives = Live.all
+        render json: { status: "SUCCESS", data: lives }
       end
 
       def show
