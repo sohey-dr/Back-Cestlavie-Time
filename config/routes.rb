@@ -1,3 +1,7 @@
 Rails.application.routes.draw do
-  resources :recipes, only: [:new, :index, :show, :create, :update, :destroy]
+  namespace "api" do
+    namespace "v1" do
+      resources :lives
+    end
+  end
 end
